@@ -39,6 +39,7 @@
 			                        <p>メールアドレスまたはパスワードが間違っています</p>
 			                    </div>
 							</div>
+								<span th:unless="${loginError == null}" th:text="${loginError}"></span>
 							<div class="form-group">
 								<label for="mailAddress">メールアドレス:</label>
 								<input type="text" name="mailAddress" id="mailAddress" class="form-control" placeholder="Email" th:field="*{mailAddress}">

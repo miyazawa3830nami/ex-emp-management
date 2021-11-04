@@ -18,7 +18,7 @@ public class AdministratorRepository {
 	private static final RowMapper<Administrator> ADMINISTRATOR_ROW_MAPPER
 	= (rs,i) -> {
 		Administrator administrator 
-		= new Administrator(rs.getInt("id"),rs.getString("name"),rs.getString("mailAddress"),rs.getString("password"));
+		= new Administrator(rs.getInt("id"),rs.getString("name"),rs.getString("mail_address"),rs.getString("password"));
 		return administrator;
 	};
 	
@@ -45,7 +45,7 @@ public class AdministratorRepository {
 	 * @return
 	 */
 	public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
-		String findBySql = "SELECT * FROM administrators WHERE mailAddress=:mail_address OR password=:password;";
+		String findBySql = "SELECT * FROM administrators WHERE mail_address=:mailAddress OR password=:password;";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("mailAddress", mailAddress).addValue("password", password);
 		List<Administrator> administratorList = template.query(findBySql, param, ADMINISTRATOR_ROW_MAPPER);
 		if(administratorList.size() == 0) {
