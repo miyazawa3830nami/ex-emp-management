@@ -22,9 +22,9 @@ public class EmployeeRepository {
 		Employee employee 
 		= new Employee(
 				rs.getInt("id"), rs.getString("name"), rs.getString("image"), rs.getString("gender"),
-				rs.getDate("hireDate"), rs.getString("mailAddress"), rs.getString("zipCode"),
+				rs.getDate("hire_date"), rs.getString("mail_address"), rs.getString("zip_code"),
 				rs.getString("address"), rs.getString("telephone"), rs.getInt("salary"), 
-				rs.getString("characteristics"), rs.getInt("dependentsCount"));
+				rs.getString("characteristics"), rs.getInt("dependents_count"));
 		return employee;
 	};
 	
@@ -36,7 +36,7 @@ public class EmployeeRepository {
 	 * @return
 	 */
 	public List<Employee> findAll(){
-		String sql = "SELECT * FROM employees ORDER BY hireDate;";
+		String sql = "SELECT * FROM employees ORDER BY hire_date;";
 		List<Employee> employeeList = template.query(sql, EMPLOYEE_ROW_MAPPER);
 		return employeeList;
 	}
