@@ -29,6 +29,10 @@ public class AdministratorController {
 	@RequestMapping("/insert")
 	public String insert(InsertAdministratorForm form) {
 		Administrator administrator = new Administrator();
-		
+		administrator.setName(form.getName());
+		administrator.setMailAddress(form.getMailAddress());
+		administrator.setPassword(form.getPassword());
+		administratorService.insert(administrator);
+		return "redirect:/";
 	}
 }

@@ -18,6 +18,9 @@ public class Administrator {
 		this.password = password;
 	}
 	
+	public Administrator() {
+	}
+	
 	public Integer getId() {
 		return id;
 	}
