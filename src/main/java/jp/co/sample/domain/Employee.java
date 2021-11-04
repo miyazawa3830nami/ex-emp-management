@@ -23,7 +23,6 @@ public class Employee {
 	public Employee(Integer id, String name, String image, String gender, Date hireDate, String mailAddress,
 			String zipCode, String address, String telephone, Integer salary, String characteristics,
 			Integer dependentsCount) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.image = image;
