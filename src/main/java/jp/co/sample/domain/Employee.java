@@ -36,6 +36,9 @@ public class Employee {
 		this.characteristics = characteristics;
 		this.dependentsCount = dependentsCount;
 	}
+	
+	public Employee() {
+	}
 
 	public Integer getId() {
 		return id;
